@@ -1,8 +1,8 @@
 # Crear un react-router desde 0
 
 - [x] Instalar linter
-- [] Crea una forma de hacer SPA
-- [] Poder navegar entre páginas con el botón de atras
+- [x] Crea una forma de hacer SPA
+- [x] Poder navegar entre páginas con el botón de atras
 - [] Crear componente Link para hacerlo declarativo
 - [] Crear componente Router para hacerlo más declarativo
 - [] Soportar una ruta por defecto (404)

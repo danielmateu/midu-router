@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { EVENTS } from './consts'
+import NotFoundPage from './pages/404'
 import AboutPage from './pages/About'
 import HomePage from './pages/Home'
 
@@ -36,7 +37,7 @@ function App () {
   return (
     <main>
       {/* <Router routes={routes} defaultComponent /> */}
-      <Router routes={appRoutes} />
+      <Router routes={appRoutes} defaultComponent={NotFoundPage} />
     </main>
   )
 }

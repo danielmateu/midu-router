@@ -5,7 +5,7 @@
 - [x] Poder navegar entre páginas con el botón de atras
 - [x] Crear componente Link para hacerlo declarativo
 - [x] Crear componente Router para hacerlo más declarativo
-- [] Soportar una ruta por defecto (404)
+- [x] Soportar una ruta por defecto (404)
 - [] Soportar rutas con parámetros
 - [] Componente Route para hacerlo declarativo
 - [] Lazy Loading de las rutas

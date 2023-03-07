@@ -1,33 +1,7 @@
 import { useEffect, useState } from 'react'
 import { EVENTS } from './consts'
-
-function navigate (href) {
-  window.history.pushState({}, '', href)
-  // Crear un evento personalizado
-  const navigationEvent = new Event(EVENTS.PUSHSTATE)
-  window.dispatchEvent(navigationEvent)
-}
-
-function HomePage () {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <p>Esta es la home</p>
-      <button onClick={() => navigate('/about')}>Ir a la about</button>
-    </div>
-  )
-}
-
-function AboutPage () {
-  return (
-    <div>
-      <h1>About Page</h1>
-      <img src='https://media.licdn.com/dms/image/C4D03AQGRZXth0rFoxw/profile-displayphoto-shrink_800_800/0/1616685560578?e=1683763200&v=beta&t=4-e5K_NfNVKSlDpDUqG-3cHSM7M2XnDP_RuVASWj61E' alt='foto de dani' width={200} />
-      <p>Hola, me llamo Dani y vamos a crear un clon de React Router</p>
-      <button onClick={() => navigate('/')}>Ir a la home</button>
-    </div>
-  )
-}
+import AboutPage from './pages/About'
+import HomePage from './pages/Home'
 
 function App () {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)

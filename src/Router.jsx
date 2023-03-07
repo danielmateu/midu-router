@@ -1,22 +1,8 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
 import { EVENTS } from './consts'
-import AboutPage from './pages/About'
-import HomePage from './pages/Home'
 
-import { Router } from './Router'
-
-const appRoutes = [
-  {
-    path: '/',
-    component: HomePage
-  },
-  {
-    path: '/about',
-    component: AboutPage
-  }
-]
-
-function App () {
+export const Router = ({ routes, defaultComponent: DefaultComponent = () => <h1>404</h1> }) => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
 
   useEffect(() => {
@@ -33,12 +19,7 @@ function App () {
     }
   }, [])
 
-  return (
-    <main>
-      {/* <Router routes={routes} defaultComponent /> */}
-      <Router routes={appRoutes} />
-    </main>
-  )
-}
+  const CurrentComponent = routes.find(route => route.path === currentPath)?.component || DefaultComponent
 
-export default App
+  return <CurrentComponent />
+}

@@ -15,7 +15,7 @@ const appRoutes = [
     component: AboutPage
   },
   {
-    path: '/search',
+    path: '/search/:query',
     component: () => <h1>Buscador</h1>
   }
 ]

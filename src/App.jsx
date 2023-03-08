@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { EVENTS } from './consts'
+
 import NotFoundPage from './pages/404'
 import AboutPage from './pages/About'
 import HomePage from './pages/Home'
@@ -14,26 +13,14 @@ const appRoutes = [
   {
     path: '/about',
     component: AboutPage
+  },
+  {
+    path: '/search',
+    component: () => <h1>Buscador</h1>
   }
 ]
 
 function App () {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname)
-
-  useEffect(() => {
-    const onLocationChange = () => {
-      setCurrentPath(window.location.pathname)
-    }
-
-    window.addEventListener(EVENTS.PUSHSTATE, onLocationChange)
-    window.addEventListener(EVENTS.POPSTATE, onLocationChange)
-
-    return () => {
-      window.removeEventListener(EVENTS.PUSHSTATE, onLocationChange)
-      window.removeEventListener(EVENTS.POPSTATE, onLocationChange)
-    }
-  }, [])
-
   return (
     <main>
       {/* <Router routes={routes} defaultComponent /> */}

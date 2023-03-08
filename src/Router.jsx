@@ -19,7 +19,9 @@ export const Router = ({ routes, defaultComponent: DefaultComponent = () => <h1>
     }
   }, [])
 
-  const CurrentComponent = routes.find(route => route.path === currentPath)?.component || DefaultComponent
+  // let routeParams = {}
 
-  return <CurrentComponent />
+  const Page = routes.find(route => route.path === currentPath)?.component || DefaultComponent
+
+  return <Page />
 }

@@ -2,6 +2,7 @@
 import NotFoundPage from './pages/404'
 import AboutPage from './pages/About'
 import HomePage from './pages/Home'
+import SearchPage from './pages/Search'
 
 import { Router } from './Router'
 
@@ -16,7 +17,7 @@ const appRoutes = [
   },
   {
     path: '/search/:query',
-    component: () => <h1>Buscador</h1>
+    component: SearchPage
   }
 ]
 

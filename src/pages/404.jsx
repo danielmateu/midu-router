@@ -6,7 +6,7 @@ const NotFoundPage = () => {
     <div>
       <h1>404</h1>
       {/* Image of something burning */}
-      <iframe src='https://giphy.com/embed/ZxomYqy9uGtSQSSjth' width='480' height='270' frameBorder='0' class='giphy-embed' allowFullScreen />
+      <iframe src='https://giphy.com/embed/ZxomYqy9uGtSQSSjth' width='480' height='270' frameBorder='0' className='giphy-embed' allowFullScreen />
       <p>Page not found</p>
       <Link to='/'>Go to home</Link>
 

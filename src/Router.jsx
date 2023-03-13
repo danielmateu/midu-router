@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Children } from 'react'
 import { match } from 'path-to-regexp'
 import { EVENTS } from './consts'
+// import { Children } from 'react'
 
-export const Router = ({ routes, defaultComponent: DefaultComponent = () => <h1>404</h1> }) => {
+export const Router = ({ children, routes = [], defaultComponent: DefaultComponent = () => <h1>404</h1> }) => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
+  // console.log(children)
 
   useEffect(() => {
     const onLocationChange = () => {
@@ -21,8 +23,18 @@ export const Router = ({ routes, defaultComponent: DefaultComponent = () => <h1>
 
   let routeParams = {}
 
+  // add routes from children <Route /> components
+  const routesFromChildren = Children.map(children, ({ props, type }) => {
+    // const { props, type } = children
+    console.log(props)
+    const { name } = type
+    const isRoute = name === 'Route'
+    return isRoute ? props : null
+  })
+
+  const routesToUse = routes.concat(routesFromChildren)
   // const Page = routes.find(route => route.path === currentPath)?.component || DefaultComponent
-  const Page = routes.find(({ path }) => {
+  const Page = routesToUse.find(({ path }) => {
     if (path === currentPath) return true
     // hemos usado path-to-regex para poder usar los parametros de la ruta
     // /search/:query <- query es un parametro

@@ -15,6 +15,10 @@ const LazyNotFoundPage = lazy(() => import('./pages/404.jsx'))
 
 const appRoutes = [
   {
+    path: '/:lang(en|es)/about',
+    component: LazyAboutPage
+  },
+  {
     path: '/search/:query',
     component: LazySearchPage
   }

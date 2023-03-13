@@ -41,4 +41,32 @@ describe('Router', () => {
     render(<Router routes={routes} />)
     expect(screen.getByText('About')).toBeTruthy()
   })
+
+  //   it('should navigate using Links', async () => {
+  //     getCurrentPath.mockReturnValueOnce('/')
+
+  //     render(
+  //       <Router>
+  //         <Route
+  //           path='/' Component={() => {
+  //             return (
+  //               <>
+  //                 <h1>Home</h1>
+  //                 <Link to='/about'>Go to About</Link>
+  //               </>
+  //             )
+  //           }}
+  //         />
+  //         <Route path='/about' Component={() => <h1>About</h1>} />
+  //       </Router>
+  //     )
+  //     // Click on the Link
+  //     const button = screen.getByText(/Go to About/)
+  //     fireEvent.click(button)
+
+//     const aboutTitle = await screen.findByText('About')
+//     console.log(screen.debug)
+//     // Check new route is rendered
+//     expect(aboutTitle).toBeTruthy()
+  //   })
 })
